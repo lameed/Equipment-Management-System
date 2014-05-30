@@ -1,0 +1,39 @@
+ 
+    <div id="submenu">
+       <h4 class="title">All Equipment</h4>
+    </div>
+    <table class="large-12 columns">
+    <tr id="structure_view">
+      
+      <td colspan="5"> <%= link_to 'Add Equipment', tool_new_path, :class => 'btn sign_in button left', :remote => true %> 
+		<div class="icon">
+<table class="large-12 columns">
+	<thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+       <th></th>
+    </tr>
+  </thead>
+  <% @tools.each do |tool| %>
+    <tr>
+      <td><%= link_to tool.id, tool_show_path(:id => tool.id) %></td>
+      <td><%= link_to tool.name, tool_show_path(:id => tool.id) %></td>
+      <td>
+      	<%= link_to 'Edit', tool_edit_path(:id => tool.id), :class => "btn tiny_button button left", remote: :true %>
+      </td>
+      <td>
+      	<%= link_to 'Delete', tool_destroy_path(:id => tool.id), :class => "btn tiny_button button left", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+      <td>
+      	<%= link_to 'Add Property', "#" %>
+      </td>
+
+	 </td>
+       
+    </tr>
+  <% end %>
+</table>
+		</div>

@@ -1,0 +1,35 @@
+<div id="icons_admin" class="large-12 columns">
+		<div class="icon">
+<%= form_for @tool, url: {action: 'create'} do |f| %>
+			<% if @tool.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@tool.errors.count, "error") %> prohibited
+      this fee from being saved:</h2>
+    <ul>
+    <% @tool.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="large-12 columns">
+  <div class="large-2 columns right">
+  
+    <%= f.submit "Save", :class => "btn sign_in button left" %>
+    <%= f.submit "back", :class => "btn sign_in button right" %>
+  
+  </div>
+</div>
+	
+	
+	<div class="large-12 columns">
+
+	
+  
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  
+ 
+	
+
+<% end %>

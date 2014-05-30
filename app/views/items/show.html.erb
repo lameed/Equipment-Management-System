@@ -1,0 +1,22 @@
+<div id="submenu">
+      <h4 class="title">Show</h4>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+<div class="large-12 columns">
+	<div class="large-6 columns">
+<%= render @item.subcategories %>
+<h3>Add Subcategory:</h3>
+<%= render "subcategories/form" %>
+</div>
+<div id="prop" class="large-6 columns">
+	<h3>Properties</h3>
+</div>
+</div>
+
+<%= link_to 'Edit', edit_item_path(@item), :class => 'btn sign_in button button' %> |  
+<%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn sign_in button button' %> |
+<%= link_to 'Back', items_path, :class => 'btn sign_in button button' %>

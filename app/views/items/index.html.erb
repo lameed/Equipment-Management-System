@@ -1,0 +1,39 @@
+<div id="submenu">
+       <h4 class="title">All Equipment</h4>
+    </div>
+    <table class="large-12 columns">
+    <tr id="structure_view">
+       <div class="small-2 columns"><%= link_to 'New Equipment', new_item_path, :class => 'btn sign_in button left' %></div>
+       <div class="small-3 columns"><p id="notice"><%= notice %></p></div>
+      
+     
+
+<div class="icon">
+<table class="large-12 columns">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+   
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.id, item %></td>
+        <td><%= link_to item.name, item %></td>
+      
+        <td><%= link_to 'Add Subcategory', items_sub_path,:class => "btn sign_in button button" %></td>
+        <td><%= link_to 'Add Properties', items_sub_path,:class => "btn sign_in button button" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</tr>
+</table>
+
+<br>
